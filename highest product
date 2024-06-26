@@ -1,0 +1,14 @@
+function highestProductOfThree(nums) {
+    if (nums.length < 3) {
+        throw new Error("Less than three items!");
+    }
+
+    nums.sort((a, b) => a - b);
+
+    const n = nums.length;
+    return Math.max(nums[n - 1] * nums[n - 2] * nums[n - 3], nums[0] * nums[1] * nums[n - 1]);
+}
+
+// Example usage:
+const nums = [1, 10, 2, 6, 5, 3];
+console.log(highestProductOfThree(nums));  // Output: 300
